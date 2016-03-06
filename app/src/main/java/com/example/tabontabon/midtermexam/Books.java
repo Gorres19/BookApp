@@ -1,7 +1,7 @@
 package com.example.tabontabon.midtermexam;
 
 /**
- * Created by gorres and chember on 3/5/2016.
+ * Created by pak on 3/5/2016.
  */
 public class Books {
     private String mTitle;

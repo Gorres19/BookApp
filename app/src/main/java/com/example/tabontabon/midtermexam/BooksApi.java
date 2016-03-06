@@ -10,12 +10,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Created by gorres and chember on 3/5/2016.
+ * Created by pak on 3/5/2016.
  *
  */
 public class BooksApi {
 
-    public static final String BASE_URL = "http://joseniandroid.herokuapp.com/api/books";
+    public static final String BASE_URL_GET = "http://joseniandroid.herokuapp.com/api/books";
+    /***
+     * Gorress wla pani nagamit kaning BASE_URL_BOOK
+     * Para sa url ni para POST/DELETE/PUT
+     */
+
+    public static final String BASE_URL_BOOK ="http://joseniandroid.herokuapp.com/api/books/{bookId}";
 
     public static final String TAG_TITLE = "title";
     public static final String TAG_GENRE = "genre";
@@ -24,7 +30,7 @@ public class BooksApi {
 
 
     public static Books getBooks(Uri uri, @NonNull String requestMethod){
-        String json = HttpUtils.getResponse(uri,requestMethod);
+        String json = HttpUtils.GET(requestMethod);
 
         if(TextUtils.isEmpty(json)){
             return  null;

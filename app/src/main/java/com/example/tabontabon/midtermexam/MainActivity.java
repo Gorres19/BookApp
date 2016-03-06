@@ -17,7 +17,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static com.example.tabontabon.midtermexam.HttpUtils.getResponse;
+import static com.example.tabontabon.midtermexam.HttpUtils.GET;
+
 
 public class MainActivity extends ListActivity {
 
@@ -82,7 +83,7 @@ public class MainActivity extends ListActivity {
             String bookname;
             String isRead ;
 
-            String jsonStr = getResponse(BASE_URL, "GET");
+            String jsonStr = GET(BASE_URL);
             Log.d("Response: ", "> " + jsonStr);
             if (jsonStr != null) {
                 try {
